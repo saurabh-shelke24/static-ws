@@ -26,7 +26,7 @@ stages {
 
     stage('Git checked required file'){
         steps{
-            sh 'ls -la',
+            sh 'ls -la'
             sh 'test -f index.html'
             sh 'test -f Dockerfile'
         }
