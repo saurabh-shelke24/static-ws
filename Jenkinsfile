@@ -6,20 +6,19 @@ stages {
      stage('checkout code') {
           steps{
                 git branch: 'main',
-                credentialsID: 'saurabh',
+                credentialsId: 'saurabh',
                 url: 'https://github.com/saurabh-shelke24/static-ws.git'
-                echo: "Git repo code downloaded successfully"         
+                echo "Git repo code downloaded successfully"         
 }
 }
      stage('Git show all file') {
-
      steps{
            sh 'ls -la'
            echo "Git all file shown successfully"
 }    
 }
-
-    post {
+}
+   post {
       success {
     echo 'Wooo Hooo Website deployed suucessfully!'
 }
@@ -27,7 +26,4 @@ stages {
      echo 'Ohhh Nooo Deployment Fail!'    
 }
 }
-
-}
-
 }
