@@ -19,7 +19,7 @@ stages {
 }
     stage('latest checkout') {
         steps{
-            sh 'checkout scm'
+            checkout scm
             echo "Git hub latest checksout successful"
         }
     }
