@@ -27,7 +27,7 @@ stages {
     stage('Git checked required file'){
         steps{
             sh 'ls -la',
-            sh 'test -f index.html',
+            sh 'test -f index.html'
             sh 'test -f Dockerfile'
         }
     }
@@ -41,7 +41,7 @@ stage('Docker build'){
 
 stage('remove existing container'){
     steps{
-        sh'docker rm -f statis-ws || true',
+        sh'docker rm -f statis-ws || true'
  sh 'docker run -d --name static-ws --restart unless-stopped -p 80:80 static-ws:latest'
  echo "Deploy successful"
     }
